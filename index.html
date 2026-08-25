@@ -1,12 +1,89 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title></title>
-    <link href="css/style.css" rel="stylesheet">
-  </head>
-  <body>
-    <h1>p</h1>
-  </body>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Entrega de Trabajos</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header>
+    <h1>Portal de Entrega de Trabajos</h1>
+    <p>Completa el formulario para registrar tu entrega</p>
+  </header>
+
+  <main>
+    <div class="card">
+      <form id="form-entrega" novalidate>
+
+        <fieldset>
+          <legend>Datos Personales</legend>
+
+          <div class="form-group">
+            <label for="nombre">Nombre(s) <span class="req">*</span></label>
+            <input type="text" id="nombre" placeholder="Ej. Juan Carlos" />
+            <span class="error" id="err-nombre"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="apellido">Apellido(s) <span class="req">*</span></label>
+            <input type="text" id="apellido" placeholder="Ej. Mamani Quispe" />
+            <span class="error" id="err-apellido"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="ci">Cédula de Identidad (CI) <span class="req">*</span></label>
+            <input type="text" id="ci" placeholder="Ej. 12345678" maxlength="12" />
+            <span class="error" id="err-ci"></span>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Datos Académicos</legend>
+
+          <div class="form-group">
+            <label for="ru">Registro Universitario (RU) <span class="req">*</span></label>
+            <input type="text" id="ru" placeholder="Ej. 20190001" maxlength="10" />
+            <span class="error" id="err-ru"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="num-lista">Número de Lista <span class="req">*</span></label>
+            <input type="number" id="num-lista" placeholder="Ej. 15" min="1" max="200" />
+            <span class="error" id="err-lista"></span>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Trabajo</legend>
+
+          <div class="form-group">
+            <label for="pdf">Archivo PDF <span class="req">*</span></label>
+            <input type="file" id="pdf" accept=".pdf" />
+            <span class="file-info" id="file-info"></span>
+            <span class="error" id="err-pdf"></span>
+          </div>
+        </fieldset>
+
+        <button type="submit">Registrar entrega</button>
+
+      </form>
+    </div>
+  </main>
+
+  <div class="modal-overlay" id="overlay">
+    <div class="modal">
+      <h2>✅ Entrega registrada</h2>
+      <div id="resumen"></div>
+      <button onclick="cerrarModal()">Cerrar</button>
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2025 Portal de Entrega de Trabajos</p>
+  </footer>
+
+  <script src="scripts.js"></script>
+</body>
 </html>
